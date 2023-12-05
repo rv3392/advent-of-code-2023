@@ -1,9 +1,8 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
+	"richal.au/aoc2023/utils"
 	"unicode"
 )
 
@@ -69,16 +68,7 @@ func partTwo(calibrationDoc []string) {
 }
 
 func main() {
-	f, err := os.Open("day1.input")
-	if err != nil {
-		panic(err)
-	}
-	scanner := bufio.NewScanner(f)
-	input := make([]string, 0)
-	for scanner.Scan() {
-		input = append(input, scanner.Text())
-	}
-
+	var input = utils.ReadIntoSliceOfStrings("day1.input")
 	partOne(input)
 	partTwo(input)
 }
