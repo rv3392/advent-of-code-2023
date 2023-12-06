@@ -17,3 +17,16 @@ func ReadIntoSliceOfStrings(filename string) []string {
 	}
 	return input
 }
+
+func ReadIntoMap(filename string) [][]rune {
+	f, err := os.Open(filename)
+	if err != nil {
+		panic(err)
+	}
+	scanner := bufio.NewScanner(f)
+	input := make([][]rune, 0)
+	for scanner.Scan() {
+		input = append(input, []rune(scanner.Text()))
+	}
+	return input
+}
