@@ -14,7 +14,7 @@ func TestPartOne(t *testing.T) {
 		{
 			"Simple Almanac",
 			"day6_test.input",
-			35,
+			288,
 		},
 	}
 	for _, tt := range tests {
